@@ -4,7 +4,7 @@ import { Link as LinkS } from "react-scroll";
 
 export const Nav = styled.nav`
   align-items: center;
-  background: black;
+  background: var(--bg-primary);
   display: flex;
   font-size: 1rem;
   height: 80px;
@@ -12,7 +12,7 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 10;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: ${({theme}) =>theme.mobile.big}) {
     transition: all 0.8s ease;
   }
 `;
@@ -29,7 +29,7 @@ export const NavBarContainer = styled.div`
 
 export const NavLogo = styled(LinkR)`
   align-items: center;
-  color: #fff;
+  color: var(--primary-clr);
   cursor: pointer;
   display: flex;
   font-size: 1.5rem;
@@ -42,7 +42,7 @@ export const NavLogo = styled(LinkR)`
 export const MobileIcons = styled.div`
   display: none;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${({theme}) =>theme.mobile.medium}) {
     display: block;
     position: absolute;
     top: 0;
@@ -50,7 +50,7 @@ export const MobileIcons = styled.div`
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
-    color: #fff;
+    color: var(--primary-clr);
   }
 `;
 export const NavMenu = styled.ul`
@@ -59,7 +59,7 @@ export const NavMenu = styled.ul`
   list-style: none;
   text-align: center;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${({theme}) =>theme.mobile.medium}) {
     display: none;
   }
 `;
@@ -71,7 +71,7 @@ export const NavItem = styled.li`
 
 export const NavLinks = styled(LinkS)`
   align-items: center;
-  color: #fff;
+  color: var(--primary-clr);
   cursor: pointer;
   display: flex;
   height: 100%;
@@ -79,7 +79,7 @@ export const NavLinks = styled(LinkS)`
   text-decoration: none;
 
   &:active {
-    border-bottom: 3px solid #01bf71;
+    border-bottom: 3px solid var(--brand-clr);
     color: #fff;
   }
 `;
@@ -88,16 +88,16 @@ export const NavBtn = styled.nav`
   align-items: center;
   display: flex;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${({theme}) =>theme.mobile.medium}) {
     display: none;
   }
 `;
 
 export const NavBtnLink = styled(LinkR)`
-  background: #01bf71;
+  background: var(--brand-clr);
   border: none;
   border-radius: 50px;
-  color: #010606;
+  color: var(--bg-primary);
   cursor: pointer;
   outline: none;
   padding: 20px 22px;
@@ -107,7 +107,7 @@ export const NavBtnLink = styled(LinkR)`
 
   &:hover {
     background: #fff;
-    color: #010606;
+    color: var(--bg-primary);
     transition: all 0.2 ease-in-out;
   }
 `;

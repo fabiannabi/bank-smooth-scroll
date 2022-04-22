@@ -4,52 +4,51 @@ import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
 
 export const SideBarContainer = styled.aside`
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  background-color: #0d0d0d;
-  display: grid;
   align-items: center;
+  background-color: var(--bg-primary);
+  display: grid;
+  height: 100%;
   left: 0;
+  position: fixed;
   transition: all 0.3 ease-in-out;
   /* opacity: ${({ isOpen }) => (isOpen ? "100%" : 0)}; */
   /* top: ${({ isOpen }) => (isOpen ? 0 : "-100%")}; */
   top: 0;
+  width: 100%;
+  z-index: 999;
 `;
 
 export const CloseIcon = styled(FaTimes)`
-  color: #fff;
+  color: var(--primary-clr);
 `;
 
 export const Icon = styled.div`
-  position: absolute;
-  top: 1.2rem;
-  right: 1.2rem;
+  cursor: position;
   background: transparent;
   font-size: 2rem;
-  cursor: position;
   outline: none;
+  position: absolute;
+  right: 1.2rem;
+  top: 1.2rem;
 `;
 
 export const SideBarWrapper = styled.div`
-  color: #fff;
+  color: var(--primary-clr);
 `;
 
 export const SideBarLink = styled(LinkS)`
-  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  text-decoration: none;
-  list-style: none;
-  transition: 0.2 ease-in-out;
-  color: #fff;
+  color: var(--primary-clr);
   cursor: pointer;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
+  list-style: none;
+  text-decoration: none;
+  transition: 0.2 ease-in-out;
 
   &:hover {
-    color: #01bf71;
-
+    color: var(--brand-clr);
     transition: 0.2 ease-in-out;
   }
 `;
@@ -65,28 +64,26 @@ export const SideBarMenu = styled.ul`
   grid-template-rows: repeat(6, 80px);
   text-align: center;
 
-  @media screen and (max-width: 480px) {
-    grid-template-rows: repeat(6, 60px);
+  @media screen and (max-width: ${({theme}) =>theme.mobile.small}) {
+    grid-template-rows: repeat(6, 65px);
   }
 `;
 
 export const SideBarRoute = styled(LinkR)`
   border-radius: 50px;
-  background: #01bf71;
-  white-space: nowrap;
-  padding: 16px 64px;
-
-  color: #010606;
-  outline: none;
+  background: var(--brand-clr);
   border: none;
+  color: var(--bg-primary);
   cursor: pointer;
-
-  transition: all 0.2 ease-in-out;
+  outline: none;
+  padding: 16px 64px;
   text-decoration: none;
+  transition: all 0.2 ease-in-out;
+  white-space: nowrap;
 
   &:hover {
+    background: var(--primary-clr);
+    color: var(--bg-primary);
     transition: 0.2 ease-in-out;
-    background: #fff;
-    color: #010606;
   }
 `;
