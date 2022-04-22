@@ -12,9 +12,9 @@ import {
   NavBtnLink,
 } from "./NavBarStyled";
 
-const NavBar = () => {
+const NavBar = ({nav_items}) => {
   const navList = () => {
-    const menu = ["About", "Discover", "Services", "Sign up"];
+    const menu = nav_items
     const list = menu.map((menuItem) => {
       return (
         <NavItem key={menuItem}>
