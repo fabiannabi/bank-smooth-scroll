@@ -78,9 +78,9 @@ export const NavLinks = styled(LinkS)`
   padding: 0 1rem;
   text-decoration: none;
 
-  &.active {
+  &:active {
     border-bottom: 3px solid #01bf71;
-    color: red;
+    color: #fff;
   }
 `;
 
@@ -105,7 +105,7 @@ export const NavBtnLink = styled(LinkR)`
   transition: all 0.2 ease-in-out;
   white-space: nowrap;
 
-  &.hover {
+  &:hover {
     background: #fff;
     color: #010606;
     transition: all 0.2 ease-in-out;
