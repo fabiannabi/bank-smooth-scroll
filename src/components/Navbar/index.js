@@ -12,7 +12,7 @@ import {
   NavBtnLink,
 } from "./NavBarStyled";
 
-const NavBar = ({nav_items}) => {
+const NavBar = ({nav_items, toggleView}) => {
   const navList = () => {
     const menu = nav_items
     const list = menu.map((menuItem) => {
@@ -30,7 +30,7 @@ const NavBar = ({nav_items}) => {
       <Nav>
         <NavBarContainer>
           <NavLogo to="/">Cashit</NavLogo>
-          <MobileIcons>
+          <MobileIcons onClick={toggleView}>
             <FaBars />
           </MobileIcons>
           <NavMenu>{navList()}</NavMenu>

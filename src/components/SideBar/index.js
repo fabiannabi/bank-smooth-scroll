@@ -10,11 +10,11 @@ import {
   SideBarLink,
 } from "./SideBarStyled";
 
-const SideBar = ({ nav_items }) => {
+const SideBar = ({ nav_items, isOpen, toggleView }) => {
   const sideItems = () => {
     const list = nav_items.map((item, i) => {
       return (
-        <SideBarLink key={`${i}_item`} to={item.toLocaleLowerCase()}>
+        <SideBarLink key={`${i}_item`} to={item.toLocaleLowerCase()} onClick={toggleView}>
           {item}
         </SideBarLink>
       );
@@ -24,8 +24,8 @@ const SideBar = ({ nav_items }) => {
 
   return (
     <>
-      <SideBarContainer>
-        <Icon>
+      <SideBarContainer isOpen={isOpen}>
+        <Icon onClick={toggleView}>
           <CloseIcon />
         </Icon>
         <SideBarWrapper>

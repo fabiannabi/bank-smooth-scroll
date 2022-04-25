@@ -10,10 +10,9 @@ export const SideBarContainer = styled.aside`
   height: 100%;
   left: 0;
   position: fixed;
-  transition: all 0.3 ease-in-out;
-  /* opacity: ${({ isOpen }) => (isOpen ? "100%" : 0)}; */
-  /* top: ${({ isOpen }) => (isOpen ? 0 : "-100%")}; */
-  top: 0;
+  transition: all 0.5 ease-in;
+  opacity: ${({ isOpen }) => (isOpen ? "100%" : '0')};
+  top: ${({ isOpen }) => (isOpen ? '0' : "-100%")};
   width: 100%;
   z-index: 999;
 `;
@@ -64,7 +63,7 @@ export const SideBarMenu = styled.ul`
   grid-template-rows: repeat(6, 80px);
   text-align: center;
 
-  @media screen and (max-width: ${({theme}) =>theme.mobile.small}) {
+  @media screen and (max-width: ${({ theme }) => theme.mobile.small}) {
     grid-template-rows: repeat(6, 65px);
   }
 `;
