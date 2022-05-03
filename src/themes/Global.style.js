@@ -5,8 +5,13 @@ export const GlobalStyles = createGlobalStyle`
 :root{
   //fonts
   --primary-clr: #fff;
+  --text-light: #f7f8fa;
+  --text-dark: #010606;
+
   //bg
   --bg-primary: #0d0d0d;
+  --bg-light: #f9f9f9;
+  --bg-dark: #010606;
   --brand-clr: #01bf71;
   --bg-secondary: #232a34;
 }
